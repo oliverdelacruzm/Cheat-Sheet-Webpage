@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheat Sheet</title>
+
+    <!--Linking Google Fonts: Satisfy, Inter and Space Mono-->
+    <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Satisfy&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"><body>
+    
+        <header>
+        <h1>CSS Cheat Sheet : Display & Positioning</h1>
+        <p class="p-header"> <span class="p-header-text">by Oliver De La Cruz</span></p>
+    </header>
+
+    <main>
+
+        <!--START Table -->
+        <table class="table-1">
+            <thead>
+                <tr>
+                    <th class="th-1">Property</th>
+                    <th>Explanation</th>
+                    <th>Syntax</th>
+                    <th>Other remarks</th>
+                </tr>
+            </thead>
+
+            <!--START Table Body-->
+            <tbody>
+                <tr>
+                    <td class="topic">z-index</td>
+                    <td>The <span class="mono">z-index</span> property permits the designation of priority to decide which elements will sit on top of others when they overlap. All positioned elements have their <span class="mono">z-index</span> set to <span class="mono">auto</span> (effectively, zero). Elements with higher integer <span class="mono">z-index</span> values will take precedence over those will lower ones, and will be displayed on top of the latter. </td>
+                    <td><span class="mono">z-index: 1;</span></td>
+                    <td>If an element has a <span class="mono">z-index</span> of 5, and that this is the highest value for this property compared to other elements, the effect would be no different if it had a <span class="mono">z-index</span> value of 2500. What would matter here is that it has the highest value.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Position: static</td>
+                    <td><span class="mono">static</span> positioning is the default value of the positioning property in the normal flow of a webpage. It is the positioning that the element being styled with this property would normally have non-styled.</td>
+                    <td><span class="mono">position: static;</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="topic">Position: relative</td>
+                    <td><span class="mono">relative</span> positioning allows one to alter the position of an element in relation to where it was in the normal flow. This can be achieved using <span class="mono">top</span>, <span class="mono">bottom</span>, <span class="mono">left</span> and <span class="mono">right</span> properties. It is possible to cause the element in question to overlap with other elements.</td>
+                    <td><span class="mono">position: relative;</span></td>
+                    <td>When the styled element is moved, the position of other elements will not be affected. The styled element is still considered to be in the normal flow.<br><br>The <span class="mono">top</span>, <span class="mono">bottom</span>, <span class="mono">left</span> and <span class="mono">right</span> properties behave in counterintuitive fashion.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Position: absolute</td>
+                    <td><span class="mono">absolute</span> positioning allows for an element to be removed from the normal flow and moved elsewhere. The space where it was will not remain unoccupied, as it can happen with <span class="mono">relative</span> positioning. The element in question will be placed in relation to its containing element.</td>
+                    <td><span class="mono">position: absolute;</span></td>
+                    <td>Other elements are placed as if the styled element did not exist, since the latter is removed from the normal flow.<br><br>The containing element will not necessarily be the parent element of the styled element — but it can be so if the parent element is positioned to something other than <span class="mono">static</span>.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Position: fixed</td>
+                    <td><span class="mono">fixed</span> positioning will usually fix an element in place relative to the viewport's visible portion. </td>
+                    <td><span class="mono">position: fixed;</span></td>
+                    <td>This positioning removes the element in question out of the normal document flow. Some tweaking may be necessary to adjacent elements so they, for example, are not hidden by the fixed element.<br><br>This property can be useful for, for example, fixing a navigation bar to the top of the page so that it remains in view as users scroll down. For this positioning to work correctly, you will need to have layout properties such as <span class="mono">top</span> and <span class="mono">left</span> set.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Position: sticky</td>
+                    <td><span class="mono">sticky</span> positioning permits an element to move with the page as it scrolls until a certain point, at which the element will remain fixed on the page as the rest of the content continues to scroll. </td>
+                    <td><span class="mono">position: sticky;</span></td>
+                    <td>This positioning could, for example, have a nagivation bar move with the page up to a certain point, and thereafter remain fixed as the page continues scrolling. Use the <span class="mono">z-index</span> property to keep the styled element above other elements on the page if necessary.</td>
+                </tr>
+
+                <tr>
+                    <td class="topic">Display: block</td>
+                    <td>The <span class="mono">display: block;</span> property applied to an element will cause it to be a block-level element, meaning that it takes up the full width of its container, and that other elements will appear on lines before or after it. </td>
+                    <td><span class="mono">display: block;</span></td>
+                    <td>Such styled elements can have their width and height adjusted manually.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Display: inline</td>
+                    <td>An element with a <span class="mono">display: inline;</span> property will take up as little space as possible and appear on the same line as other like elements.</td>
+                    <td><span class="mono">display: inline;</span></td>
+                    <td>Such styled elements <strong>cannot</strong> have their width and height adjusted manually.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Display: inline-block</td>
+                    <td>Like <i>inline</i> elements, ones with the <span class="mono">display: inline-block;</span> property will appear on the same line as other like elements.  </td>
+                    <td><span class="mono">display: inline-block;</span></td>
+                    <td>A distinction for elements styled this way is that their height and width <strong>can</strong> be adjusted.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Float</td>
+                    <td>The <span class="mono">float</span> property permits the placement of an element to the left or right of its container.</td>
+                    <td><span class="mono">float: left;</span><br><span class="mono">float: right;</span></td>
+                    <td>A floated element is taken out of normal document flow, and content underneath it moves up to the place where it was. This property can also be used to wrap text around an image, or to place elements side by side.</td>
+                </tr>
+                <tr>
+                    <td class="topic">Clear</td>
+                    <td>The <span class="mono">clear</span> property makes it possible to move the styled element below elements that are floated to the right, to the left, or both types.</td>
+                    <td><span class="mono">clear: left;</span><br><span class="mono">clear: right;</span><br><span class="mono">clear: both;</span></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <!--END Table Body-->
+            
+        </table>
+        <!--END Table-->
+
+    </main>
+</body>
+</html>
